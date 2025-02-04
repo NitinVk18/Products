@@ -1,0 +1,32 @@
+<h1>EDIT PRODUCTS</h1>
+
+<form action="http://localhost:3000/updateproduct" method="post" enctype="multipart/form-data">
+  {{#each results}}
+    <!-- Display the current image -->
+    <label for="currentImage">Current Image:</label>
+    <img src="/uploads/{{product_image}}" alt="Product Image" height="100px"><br>
+
+    <!-- Hidden field to store the old image -->
+    <input type="hidden" name="oldImage" value="{{product_image}}">
+
+    <!-- File input to upload a new image (optional) -->
+    <label for="imageName">Select a new image (optional):</label>
+    <input type="file" name="imageName"><br><br>
+
+    <!-- Product details -->
+    <label for="t1">Product Name:</label>
+    <input type="text" name="t1" value="{{product_name}}"><br><br>
+
+    <label for="t2">Product Price:</label>
+    <input type="text" name="t2" value="{{product_price}}"><br><br>
+
+    <label for="t3">Product Date:</label>
+    <input type="text" name="t3" value="{{p_date}}"><br><br>
+
+    <!-- Hidden field for product ID -->
+    <input type="hidden" name="myid" value="{{id}}">
+
+    <!-- Submit button -->
+    <input type="submit" value="Update Changes">
+  {{/each}}
+</form>
